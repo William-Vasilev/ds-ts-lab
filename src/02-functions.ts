@@ -61,10 +61,9 @@ function highestExtension(cs: Colleague[]) { // Inferred retun type
 addColleague(colleagues.current, "Sheild O Connell", "HR", "soc@here.com");
 console.log(colleagues.current.filter((c) => c.name === "Sheild O Connell"));
 
-function sortColleagues(
-    colleagues: Colleague[],
-    sorter: (c1: Colleague, c2: Colleague) => number
-  ): EmailContact[] {
+
+
+function sortColleagues(colleagues: Colleague[], sorter: (c1: Colleague, c2: Colleague) => number): EmailContact[] {
     const sorted = colleagues.sort(sorter); // Colleague[] inferred
     const result: EmailContact[] = sorted.map((ce) => ({ name: ce.name, email: ce.contact.email }));
     return result 
@@ -72,3 +71,13 @@ function sortColleagues(
   
   console.log(sortColleagues(colleagues.current, (a, b) => a.contact.extension - b.contact.extension));
   console.log(sortColleagues(colleagues.current, (a, b) => a.name.length - b.name.length));
+
+
+  function findFriends(friends: Friend[], finder: (friend: Friend) => boolean): string[] {
+    const found = friends.filter(finder);
+    const result = found.map((friend) => friend.name);
+    return result;
+  }
+
+console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
+console.log(findFriends(friends, (friend) => friend.age < 35));

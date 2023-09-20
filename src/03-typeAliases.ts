@@ -68,6 +68,11 @@ import {
     colleague1
   )
   
+  const myBuddyList = makeBuddyList(
+      "My Buddy List",
+    [friends[0],friends[1]]
+  )
+
   const myBandBuddies = makeBuddyList(
       "Band name",
       [colleague1, friends[1]]
@@ -113,11 +118,11 @@ import {
     return friends;
   }
   
-  const myBuddyList: BuddyList = {
-    name: "My Buddy List",
-    administrator: "Admin",
-    members: [friend1, friend2],
-  };
+//   const myBuddyList: BuddyList = {
+//     name: "My Buddy List",
+//     administrator: "Admin",
+//     members: [friend1, friend2],
+//   };
   
-  const friendList = getBuddyListFriends(myBuddyList);
-  console.log(friendList);
+  //const friendList = getBuddyListFriends(myBuddyList);
+  console.log(myBuddyList);

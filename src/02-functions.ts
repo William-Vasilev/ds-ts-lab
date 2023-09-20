@@ -97,3 +97,20 @@ console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name
 
 console.log(findFriends(friends, (friend) => friend.name.startsWith('Pa')));
 console.log(findFriends(friends, (friend) => friend.age < 35));
+
+
+
+function addInterest(friend: Friend, intToAdd: string): string[] {
+  // Check if 'interests' property exists, and if not, create it as an empty array.
+  if (!friend.interests) {
+    friend.interests = [];
+  }
+
+  // Add the new interest to the 'interests' array.
+  friend.interests.push(intToAdd);
+
+  // Return the updated 'interests' array.
+  return friend.interests;
+}
+
+console.log(addInterest(friends[1], 'Politics'))
